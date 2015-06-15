@@ -2,11 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/navigation_item_1"
-            android:checked="true"
-            android:title="navigation_item_1"/>
-        <item
-            android:id="@+id/navigation_item_2"
-            android:title="navigation_item_2"/>
+            android:id="@+id/design_support_library"
+            android:title="@string/design_support_library">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/tabLayout"
+                        android:icon="@drawable/ic_tab_black_24dp"
+                        android:title="@string/tabLayout" />
+                    <item
+                        android:id="@+id/collapsingToolbarLayout"
+                        android:icon="@drawable/ic_layers_black_18dp"
+                        android:title="@string/collapsingToolbarLayout" />
+
+                </group>
+            </menu>
+        </item>
     </group>
 </menu>

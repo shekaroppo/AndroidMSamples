@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/background3"
+    android:layout_height="192dp">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:id="@+id/profile_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/avatar"
+        app:border_width="1dp"
+        app:border_color="@android:color/white"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ksdnvklf"/>
-
-</LinearLayout>
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/activity_horizontal_margin">
+        <TextView
+            android:id="@+id/drawer_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shekar"
+            style="@style/DrawerNameText" />
+        <TextView
+            android:id="@+id/drawer_user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="shekar.shine@gmail.com"
+            style="@style/ViewText" />
+    </LinearLayout>
+</RelativeLayout>

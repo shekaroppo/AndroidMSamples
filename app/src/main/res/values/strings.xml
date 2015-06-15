@@ -3,4 +3,29 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="navigation_drawer_open" translatable="false"/>
+    <string name="navigation_drawer_close" translatable="false"/>
+    <string name="design_support_library">Design Support library</string>
+    <string name="floating_action_button">FloatingActionButton</string>
+    <string name="tabLayout">TabLayout</string>
+    <string name="coordinatorLayout">CoordinatorLayout</string>
+    <string name="appBarLayout">AppBarLayout</string>
+    <string name="collapsingToolbarLayout">CollapsingToolbarLayout </string>
+    <string name="snaclbar">Snackbar</string>
+    <string name="navigation_view">NavigationView</string>
+
+    <string-array name="batman_quotes">
+        <item>Everyone has gone through some sort of struggle in their lives.</item>
+        <item>Everyone has fears. Conquering them is what matters.</item>
+        <item>It\'s okay if she doesn\'t love you back. Being there for that special person is what matters the most.</item>
+        <item>Have your own values and morals. It defines you as a person.</item>
+        <item>Everyone wears a mask. We only remove them in front of our loved ones.</item>
+        <item>There will always be someone who hasn\'t given up on you. Don\'t let them down, and never back down. Ever.</item>
+        <item>How will you learn to rise if you never fall?</item>
+        <item>Enemies are a necessity. You keep fighting, you keep learning. It helps you grow.</item>
+        <item>The climb might be steep, but you have to start somewhere.</item>
+        <item>In the end, there\'s always a way out.</item>
+        <item>May the spirit of Batman live on within you, forever.</item>
+    </string-array>
+
 </resources>
