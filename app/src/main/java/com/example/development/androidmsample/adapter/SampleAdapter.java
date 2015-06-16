@@ -56,7 +56,6 @@ public class SampleAdapter
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public String mBoundString;
 
         public final View mView;
         public final ImageView mImageView;
@@ -76,9 +75,6 @@ public class SampleAdapter
         }
     }
 
-    public String getValueAt(int position) {
-        return mValues.get(position);
-    }
 
     @Override
     public int getItemCount() {
