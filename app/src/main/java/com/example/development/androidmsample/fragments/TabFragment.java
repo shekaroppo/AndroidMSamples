@@ -22,14 +22,9 @@ import butterknife.OnClick;
 
 public class TabFragment extends BaseFragment {
 
-    private static final int AMOUNT_OF_DATA = 50;
-
     public static TabFragment newInstance() {
         return new TabFragment();
     }
-
-    @InjectView(R.id.fab)
-    FloatingActionButton fab;
 
     @InjectView(R.id.tabRootLayout)
     View rootView;
@@ -41,8 +36,6 @@ public class TabFragment extends BaseFragment {
     @InjectView(R.id.viewpager)
     ViewPager mViewPager;
 
-    @InjectView(R.id.toolbar)
-    Toolbar mToolbar;
 
     public TabFragment() {
     }
@@ -62,17 +55,6 @@ public class TabFragment extends BaseFragment {
     @OnClick(R.id.fab)
     void onClick() {
         Snackbar.make(rootView, "This is Snackbar", Snackbar.LENGTH_LONG).show(); // Do not forget to show!
-    }
-
-    protected void setupToolbar() {
-        mToolbar.setTitle(R.string.tabLayout);
-        mToolbar.setNavigationIcon(R.drawable.ic_menu);
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((MainActivity) getActivity()).openDrawer();
-            }
-        });
     }
 
     private void setupTabLayout() {

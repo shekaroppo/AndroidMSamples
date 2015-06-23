@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:layout_gravity="end|bottom"
+    android:layout_margin="@dimen/fab_margin"
+    android:orientation="vertical">
+
+
+    <ImageButton
+        android:id="@+id/fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/primary_dark"
+        android:elevation="8dp"
+        android:src="@drawable/ic_email"
+        android:tint="@color/primary_dark" />
+
+    <RelativeLayout
+        android:id="@+id/expanded_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/accent"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:visibility="invisible">
+
+        <ImageButton
+            android:id="@+id/act_collapse"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentRight="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_email"
+            android:tint="@color/primary_dark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/act_collapse"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/btn_action_1"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_android"
+                android:tint="@color/primary_dark" />
+
+            <ImageButton
+                android:id="@+id/btn_action_2"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_android"
+                android:tint="@color/primary_dark" />
+
+            <ImageButton
+                android:id="@+id/btn_action_3"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_android"
+                android:tint="@color/primary_dark" />
+
+            <ImageButton
+                android:id="@+id/btn_action_4"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_android"
+                android:tint="@color/primary_dark" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</FrameLayout>

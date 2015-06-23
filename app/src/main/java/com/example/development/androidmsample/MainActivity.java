@@ -1,22 +1,17 @@
 package com.example.development.androidmsample;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.development.androidmsample.adapter.ViewPagerAdapter;
 import com.example.development.androidmsample.fragments.BaseFragment;
+import com.example.development.androidmsample.fragments.CoordinatorLayout;
 import com.example.development.androidmsample.fragments.TabFragment;
 import com.example.development.androidmsample.utils.Navigator;
 
@@ -50,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     protected void onResumeFragments() {
         super.onResumeFragments();
         setRootFragment(TabFragment.newInstance());
-        mCurrentMenuItem = R.id.tabLayout;
     }
 
     @Override
@@ -136,20 +130,12 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
             return false;
         }
         switch (id) {
-//            case R.id.standard_app_bar_menu_item:
-//                setNewRootFragment(StandardAppBarFragment.newInstance());
-//                break;
-//            case R.id.tabs_menu_item:
-//                setNewRootFragment(TabHolderFragment.newInstance());
-//                break;
-//
-//            case R.id.parallax_menu_item:
-//                setNewRootFragment(FlexibleSpaceWithImageFragment.newInstance());
-//                break;
-//
-//            case R.id.pinned_app_bar_menu_item:
-//                setNewRootFragment(FlexibleSpaceFragment.newInstance());
-//                break;
+            case R.id.tabLayout:
+                setRootFragment(TabFragment.newInstance());
+                break;
+            case R.id.collapsingToolbarLayout:
+                setRootFragment(CoordinatorLayout.newInstance());
+                break;
         }
         mCurrentMenuItem = id;
         menuItem.setChecked(true);

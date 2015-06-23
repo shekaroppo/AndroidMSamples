@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            app:layout_scrollFlags="" />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
@@ -39,7 +39,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_plus_one_black_18dp"
         app:layout_behavior="com.example.development.androidmsample.utils.ScrollAwareFABBehavior"
-        app:fabSize="normal" />
-
-
+        app:fabSize="mini" />
+    <!--<include layout="@layout/fab_action"-->
+        <!--/>-->
 </android.support.design.widget.CoordinatorLayout>
