@@ -86,7 +86,6 @@ public class Navigator{
         mFragmentManager.beginTransaction()
                 .replace(mDefaultContainer, fragment, getName(fragment))
                 .commit();
-        mFragmentManager.executePendingTransactions();
     }
 
     /**

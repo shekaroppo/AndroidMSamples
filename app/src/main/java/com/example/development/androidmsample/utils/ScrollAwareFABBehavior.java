@@ -20,8 +20,7 @@ import com.example.development.androidmsample.R;
 public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
     private boolean mIsAnimatingOut = false;
-    private boolean isNestedScrollStoped=false;
-    private String LOGTAG="=====";
+    private String LOGTAG="--";
 
     public ScrollAwareFABBehavior(Context context, AttributeSet attrs) {
         super();
@@ -44,7 +43,6 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
                                        final View directTargetChild, final View target, final int nestedScrollAxes) {
         // Ensure we react to vertical scrolling
         Log.d(LOGTAG,"onStartNestedScroll");
-        isNestedScrollStoped=false;
         return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL
                 || super.onStartNestedScroll(coordinatorLayout, child, directTargetChild, target, nestedScrollAxes);
     }
@@ -54,10 +52,12 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
                                final View target, final int dxConsumed, final int dyConsumed,
                                final int dxUnconsumed, final int dyUnconsumed) {
         super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed);
-        Log.d(LOGTAG,"onNestedScroll");
-        if ( !this.mIsAnimatingOut && child.getVisibility() == View.VISIBLE) {
+        if (dyConsumed > 0 && !this.mIsAnimatingOut && child.getVisibility() == View.VISIBLE) {
             // User scrolled down and the FAB is currently visible -> hide the FAB
             animateOut(child);
+        } else if (dyConsumed < 0 && child.getVisibility() != View.VISIBLE) {
+            // User scrolled up and the FAB is currently not visible -> show the FAB
+            animateIn(child);
         }
     }
 
@@ -65,12 +65,6 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
     public void onStopNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child, View target) {
         super.onStopNestedScroll(coordinatorLayout, child, target);
         Log.d(LOGTAG,"onStopNestedScroll");
-        if(mIsAnimatingOut){
-            isNestedScrollStoped=true;
-        }
-        else if( child.getVisibility() != View.VISIBLE){
-            animateIn(child);
-        }
     }
 
     @Override
@@ -102,9 +96,6 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
                         public void onAnimationEnd(View view) {
                             ScrollAwareFABBehavior.this.mIsAnimatingOut = false;
                             view.setVisibility(View.GONE);
-                            if(isNestedScrollStoped&&view.getVisibility() != View.VISIBLE){
-                                animateIn((FloatingActionButton)view);
-                            }
                         }
                     }).start();
         } else {

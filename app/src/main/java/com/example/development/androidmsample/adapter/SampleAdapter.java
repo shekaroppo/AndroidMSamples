@@ -27,17 +27,39 @@ public class SampleAdapter
     }
 
     private void setDrawables() {
-        mDrawables.add(0, R.drawable.b1);
-        mDrawables.add(1, R.drawable.b2);
-        mDrawables.add(2, R.drawable.b3);
-        mDrawables.add(3, R.drawable.b4);
-        mDrawables.add(4, R.drawable.b5);
-        mDrawables.add(5, R.drawable.b6);
-        mDrawables.add(6, R.drawable.b7);
-        mDrawables.add(7, R.drawable.b8);
-        mDrawables.add(8, R.drawable.b9);
-        mDrawables.add(9, R.drawable.b10);
-        mDrawables.add(10, R.drawable.b11);
+        mDrawables.add(0, R.drawable.superman);
+        mDrawables.add(1, R.drawable.batman);
+        mDrawables.add(2, R.drawable.spiderman);
+        mDrawables.add(3, R.drawable.thor);
+        mDrawables.add(4, R.drawable.haljordan);
+        mDrawables.add(5, R.drawable.wonderwoman);
+        mDrawables.add(6, R.drawable.captainamerica);
+        mDrawables.add(7, R.drawable.martinmanhunter);
+        mDrawables.add(8, R.drawable.dickgrayson);
+        mDrawables.add(9, R.drawable.thing);
+        mDrawables.add(10, R.drawable.humantorch);
+        mDrawables.add(11, R.drawable.mrfantatstic);
+        mDrawables.add(12, R.drawable.invisiblewoman);
+        mDrawables.add(13, R.drawable.wallywest);
+        mDrawables.add(14, R.drawable.kylerayner);
+        mDrawables.add(15, R.drawable.superboy);
+        mDrawables.add(16, R.drawable.leonardo);
+        mDrawables.add(17, R.drawable.raphael);
+        mDrawables.add(18, R.drawable.donatello);
+        mDrawables.add(19, R.drawable.michelangelo);
+        mDrawables.add(20, R.drawable.silversurfer);
+        mDrawables.add(21, R.drawable.aquaman);
+        mDrawables.add(22, R.drawable.greenarrow);
+        mDrawables.add(23, R.drawable.barryallen);
+        mDrawables.add(24, R.drawable.timdrake);
+        mDrawables.add(25, R.drawable.supergirl);
+        mDrawables.add(26, R.drawable.ironman);
+        mDrawables.add(27, R.drawable.hercules);
+        mDrawables.add(28, R.drawable.daredevil);
+        mDrawables.add(29, R.drawable.orion);
+        mDrawables.add(30, R.drawable.blackpanther);
+        mDrawables.add(31, R.drawable.wolverine);
+
     }
 
     @Override
@@ -64,8 +86,8 @@ public class SampleAdapter
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mImageView = (ImageView) view.findViewById(R.id.batman_img);
-            mTextView = (TextView) view.findViewById(R.id.batman_quote);
+            mImageView = (ImageView) view.findViewById(R.id.avatar);
+            mTextView = (TextView) view.findViewById(R.id.name);
 
         }
 

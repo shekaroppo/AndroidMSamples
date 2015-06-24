@@ -37,9 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_plus_one_black_18dp"
+        android:src="@drawable/ic_action_done"
         app:layout_behavior="com.example.development.androidmsample.utils.ScrollAwareFABBehavior"
-        app:fabSize="mini" />
-    <!--<include layout="@layout/fab_action"-->
-        <!--/>-->
+        app:fabSize="normal" />
+
 </android.support.design.widget.CoordinatorLayout>

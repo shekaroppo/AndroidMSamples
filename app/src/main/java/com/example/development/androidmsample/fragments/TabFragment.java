@@ -68,7 +68,7 @@ public class TabFragment extends BaseFragment {
 
     private void setupViewPager() {
         final ViewPagerAdapter adapter = new ViewPagerAdapter
-                (getActivity().getSupportFragmentManager(), mTabLayout.getTabCount());
+                (getChildFragmentManager(), mTabLayout.getTabCount());
         mViewPager.setAdapter(adapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
     }

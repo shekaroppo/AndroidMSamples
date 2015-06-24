@@ -3,8 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="navigation_drawer_open" translatable="false"/>
-    <string name="navigation_drawer_close" translatable="false"/>
+    <string name="navigation_drawer_open" translatable="false" />
+    <string name="navigation_drawer_close" translatable="false" />
     <string name="design_support_library">Design Support library</string>
     <string name="floating_action_button">FloatingActionButton</string>
     <string name="tabLayout">TabLayout</string>
@@ -26,6 +26,43 @@
         <item>The climb might be steep, but you have to start somewhere.</item>
         <item>In the end, there\'s always a way out.</item>
         <item>May the spirit of Batman live on within you, forever.</item>
+    </string-array>
+
+    <string-array name="superheros">
+        <item>Superman</item>
+        <item>Batman</item>
+        <item>Spider-Man</item>
+        <item>Thor</item>
+        <item>Hal Jordan</item>
+        <item>Wonder Woman</item>
+        <item>Captian America</item>
+        <item>Martian Manhunter</item>
+        <item>Dick Grayson</item>
+        <item>Thing</item>
+        <item>Human Torch</item>
+        <item>Mr Fantastic</item>
+        <item>Invisible Woman</item>
+        <item>Wally West</item>
+        <item>Kyle Rayner</item>
+        <item>Superboy</item>
+        <item>Leonardo</item>
+        <item>Raphale</item>
+        <item>Donatello</item>
+        <item>Michelangelo</item>
+        <item>Silver Surfer</item>
+        <item>Aquaman</item>
+        <item>Green Arrow</item>
+        <item>Barry Allen</item>
+        <item>Tim Drake</item>
+        <item>Supergirl</item>
+        <item>Iron Man</item>
+        <item>Hercules</item>
+        <item>Daredevil</item>
+        <item>Orion</item>
+        <item>Black Panther</item>
+        <item>Wolverine</item>
+
+
     </string-array>
 
     <string name="cheese_ipsum">Jarlsberg lancashire edam. Dolcelatte hard cheese brie st. agur blue
