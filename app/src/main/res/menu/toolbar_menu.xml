@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_scroll"
+        android:title="@string/menu_toolbar_scroll_"
+        app:showAsAction="never|collapseActionView"/>
+    <item
+        android:id="@+id/menu_scroll_enteralways"
+        android:title="@string/menu_toolbar_scroll_n_enteralways"
+        app:showAsAction="never"/>
+</menu>

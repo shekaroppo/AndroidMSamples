@@ -2,6 +2,7 @@ package com.example.development.androidmsample;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.development.androidmsample.fragments.BaseFragment;
-import com.example.development.androidmsample.fragments.CoordinatorLayoutFragment;
+import com.example.development.androidmsample.fragments.TabLayoutFragment;
+import com.example.development.androidmsample.fragments.ToolbarFragment;
 import com.example.development.androidmsample.utils.Navigator;
 
 import butterknife.ButterKnife;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         initNavigator();
         setupNavDrawer();
         if(savedInstanceState==null){
-            setRootFragment(CoordinatorLayoutFragment.newInstance());
+            setRootFragment(ToolbarFragment.newInstance());
         }
     }
 
@@ -123,8 +125,11 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
             return false;
         }
         switch (id) {
-            case R.id.coordinatorLayout:
-                setRootFragment(CoordinatorLayoutFragment.newInstance());
+            case R.id.toolbarLayout:
+                setRootFragment(ToolbarFragment.newInstance());
+                break;
+            case R.id.tabLayout:
+                setRootFragment(TabLayoutFragment.newInstance());
                 break;
         }
         mCurrentMenuItem = id;

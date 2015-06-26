@@ -2,8 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/coordinatorLayout"
+            android:id="@+id/toolbarLayout"
             android:icon="@drawable/ic_layers_black_18dp"
-            android:title="@string/coordinatorLayout" />
+            android:title="@string/toolbarLayout" />
+        <item
+            android:id="@+id/tabLayout"
+            android:icon="@drawable/ic_layers_black_18dp"
+            android:title="@string/tabLayout" />
     </group>
 </menu>

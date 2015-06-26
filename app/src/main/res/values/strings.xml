@@ -8,7 +8,7 @@
     <string name="design_support_library">Design Support library</string>
     <string name="floating_action_button">FloatingActionButton</string>
     <string name="tabLayout">TabLayout</string>
-    <string name="coordinatorLayout">CoordinatorLayout</string>
+    <string name="toolbarLayout">ToolbarLayout</string>
     <string name="appBarLayout">AppBarLayout</string>
     <string name="collapsingToolbarLayout">CollapsingToolbarLayout </string>
     <string name="snaclbar">Snackbar</string>
@@ -70,11 +70,14 @@
     bergkase cream cheese fromage frais cheesy feet port-salut airedale. St. agur blue cheese rubber
     cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
     the big cheese.</string>
-    <string name="menu_scroll">scroll</string>
-    <string name="menu_scroll_n_enteralways">scroll+enteralways</string>
+    <string name="menu_toolbar_scroll_">Toolbar scroll</string>
+    <string name="menu_toolbar_scroll_n_enteralways">Toolbar scroll enteralways</string>
     <string name="menu_tab_pin_scroll">Pin Tab on scroll</string>
     <string name="menu_tab_unpin_scroll">UnPin Tab on scroll</string>
-    <string name="menu_snakbar_fab_anim">scroll+enteralways</string>
+    <string name="menu_snakbar_fab_scale_anim">FAB scale anim</string>
+    <string name="menu_snakbar_fab_translate_anim">FAB translate anim</string>
+
+
     <string name="menu_extended_toolbar_scroll">scroll+enteralways</string>
     <string name="menu_extended_toolbar_scroll_enteralways">scroll+enteralways</string>
     <string name="scroll_enteralways_enteralwasyscollapsed">scroll+enteralways+enteralwasyscollapsed</string>

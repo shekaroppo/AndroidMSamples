@@ -4,8 +4,8 @@
     android:id="@+id/main_content"
     style="@style/match">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
         style="@style/match"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
@@ -19,10 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
-            style="@style/block" />
 
     </android.support.design.widget.AppBarLayout>
 
