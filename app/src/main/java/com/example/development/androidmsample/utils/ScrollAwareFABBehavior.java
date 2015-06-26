@@ -19,12 +19,18 @@ import com.example.development.androidmsample.R;
 
 public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
+    private int mAnimType;
     private boolean mIsAnimatingOut = false;
     private boolean isNestedScrollStoped=false;
     private String LOGTAG="=====";
 
     public ScrollAwareFABBehavior(Context context, AttributeSet attrs) {
         super();
+    }
+
+    public ScrollAwareFABBehavior(int animType) {
+        super();
+        mAnimType=animType;
     }
 
     @Override
@@ -84,29 +90,34 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
         Log.d(LOGTAG,"onNestedFling  Y="+velocityY+"   =consumed="+consumed);
         return super.onNestedFling(coordinatorLayout, child, target, velocityX, velocityY, consumed);
     }
+    private ViewPropertyAnimatorListener animListner=new ViewPropertyAnimatorListener() {
+        public void onAnimationStart(View view) {
+            ScrollAwareFABBehavior.this.mIsAnimatingOut = true;
+        }
 
+    public void onAnimationCancel(View view) {
+        ScrollAwareFABBehavior.this.mIsAnimatingOut = false;
+    }
+
+    public void onAnimationEnd(View view) {
+        ScrollAwareFABBehavior.this.mIsAnimatingOut = false;
+        view.setVisibility(View.GONE);
+        if(isNestedScrollStoped&&view.getVisibility() != View.VISIBLE){
+            animateIn((FloatingActionButton)view);
+        }
+    }
+};
     // Same animation that FloatingActionButton.Behavior uses to hide the FAB when the AppBarLayout exits
     private void animateOut(final FloatingActionButton button) {
         Log.d(LOGTAG,"animateOut");
         if (Build.VERSION.SDK_INT >= 14) {
-            ViewCompat.animate(button).scaleX(0.0F).scaleY(0.0F).alpha(0.0F).setInterpolator(INTERPOLATOR).withLayer()
-                    .setListener(new ViewPropertyAnimatorListener() {
-                        public void onAnimationStart(View view) {
-                            ScrollAwareFABBehavior.this.mIsAnimatingOut = true;
-                        }
-
-                        public void onAnimationCancel(View view) {
-                            ScrollAwareFABBehavior.this.mIsAnimatingOut = false;
-                        }
-
-                        public void onAnimationEnd(View view) {
-                            ScrollAwareFABBehavior.this.mIsAnimatingOut = false;
-                            view.setVisibility(View.GONE);
-                            if(isNestedScrollStoped&&view.getVisibility() != View.VISIBLE){
-                                animateIn((FloatingActionButton)view);
-                            }
-                        }
-                    }).start();
+            if(mAnimType==Constants.SCALE) {
+                ViewCompat.animate(button).scaleX(0.0F).scaleY(0.0F).alpha(0.0F).setInterpolator(INTERPOLATOR).withLayer()
+                        .setListener(animListner).start();
+            }else if(mAnimType==Constants.TRANSLATE){
+                ViewCompat.animate(button).translationY(100F).alpha(0.0F).setInterpolator(INTERPOLATOR).withLayer()
+                        .setListener(animListner).start();
+            }
         } else {
             Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.fab_out);
             anim.setInterpolator(INTERPOLATOR);
@@ -134,14 +145,30 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
         Log.d(LOGTAG,"animateIn");
         button.setVisibility(View.VISIBLE);
         if (Build.VERSION.SDK_INT >= 14) {
-            ViewCompat.animate(button).scaleX(1.0F).scaleY(1.0F).alpha(1.0F)
-                    .setInterpolator(INTERPOLATOR).withLayer().setListener(null)
-                    .start();
+            if(mAnimType==Constants.SCALE) {
+                ViewCompat.animate(button).scaleX(1.0F).scaleY(1.0F).alpha(1.0F)
+                        .setInterpolator(INTERPOLATOR).withLayer().setListener(null)
+                        .start();
+            }
+            else if (mAnimType==Constants.TRANSLATE){
+                ViewCompat.animate(button).translationY(0F).alpha(1.0F)
+                        .setInterpolator(INTERPOLATOR).withLayer().setListener(null)
+                        .start();
+            }
         } else {
-            Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.fab_in);
-            anim.setDuration(200L);
-            anim.setInterpolator(INTERPOLATOR);
-            button.startAnimation(anim);
+            if(mAnimType==Constants.SCALE) {
+                Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.fab_in);
+                anim.setDuration(200L);
+                anim.setInterpolator(INTERPOLATOR);
+                button.startAnimation(anim);
+            }
+            else if (mAnimType==Constants.TRANSLATE){
+                Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.snackbar_in);
+                anim.setDuration(200L);
+                anim.setInterpolator(INTERPOLATOR);
+                button.startAnimation(anim);
+            }
+
         }
     }
 }

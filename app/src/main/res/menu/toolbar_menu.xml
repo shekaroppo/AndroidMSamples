@@ -1,11 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/menu_snakbar_fab_scale_anim"
+        android:title="@string/menu_snakbar_fab_scale_anim"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_snakbar_fab_translate_anim"
+        android:title="@string/menu_snakbar_fab_translate_anim"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_scroll"
         android:title="@string/menu_toolbar_scroll_"
-        app:showAsAction="never|collapseActionView"/>
+        app:showAsAction="never|collapseActionView" />
     <item
         android:id="@+id/menu_scroll_enteralways"
         android:title="@string/menu_toolbar_scroll_n_enteralways"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 </menu>
