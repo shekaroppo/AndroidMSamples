@@ -3,6 +3,7 @@ package com.example.development.androidmsample.fragments;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,8 +33,9 @@ public abstract class BaseFragment extends Fragment {
         return view;
     }
 
-    protected void setupToolbar() {
-        mToolbar.setTitle(R.string.tabLayout);
+    protected void setupToolbar(String title) {
+        ((AppCompatActivity)getActivity()).setSupportActionBar(mToolbar);
+        mToolbar.setTitle(title);
         mToolbar.setNavigationIcon(R.drawable.ic_menu);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,5 +1,35 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" android:showAsAction="never" />
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_scroll"
+        android:title="@string/menu_scroll"
+        app:showAsAction="never|collapseActionView"/>
+    <item
+        android:id="@+id/menu_scroll_enteralways"
+        android:title="@string/menu_scroll_n_enteralways"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_tab_pin_scroll"
+        android:title="@string/menu_tab_pin_scroll"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_tab_unpin_scroll"
+        android:title="@string/menu_tab_unpin_scroll"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_snakbar_fab_anim"
+        android:title="@string/menu_scroll_n_enteralways"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_extended_toolbar_scroll"
+        android:title="@string/menu_scroll_n_enteralways"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_extended_toolbar_scroll_enteralways"
+        android:title="@string/menu_scroll_n_enteralways"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_extended_toolbar_scroll_enteralways_enteralwasyscollapsed"
+        android:title="@string/scroll_enteralways_enteralwasyscollapsed"
+        app:showAsAction="never"/>
 </menu>

@@ -7,13 +7,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.development.androidmsample.fragments.BaseFragment;
-import com.example.development.androidmsample.fragments.CoordinatorLayout;
-import com.example.development.androidmsample.fragments.TabFragment;
+import com.example.development.androidmsample.fragments.CoordinatorLayoutFragment;
 import com.example.development.androidmsample.utils.Navigator;
 
 import butterknife.ButterKnife;
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         initNavigator();
         setupNavDrawer();
         if(savedInstanceState==null){
-            setRootFragment(TabFragment.newInstance());
+            setRootFragment(CoordinatorLayoutFragment.newInstance());
         }
     }
 
@@ -94,29 +92,6 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void onDrawerSlide(View drawerView, float slideOffset) {
         mDrawerToggle.onDrawerSlide(drawerView, slideOffset);
     }
@@ -148,11 +123,8 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
             return false;
         }
         switch (id) {
-            case R.id.tabLayout:
-                setRootFragment(TabFragment.newInstance());
-                break;
-            case R.id.collapsingToolbarLayout:
-                setRootFragment(CoordinatorLayout.newInstance());
+            case R.id.coordinatorLayout:
+                setRootFragment(CoordinatorLayoutFragment.newInstance());
                 break;
         }
         mCurrentMenuItem = id;
