@@ -74,8 +74,9 @@
     <string name="menu_toolbar_scroll_n_enteralways">Toolbar scroll enteralways</string>
     <string name="menu_tab_pin_scroll">Pin Tab on scroll</string>
     <string name="menu_tab_unpin_scroll">UnPin Tab on scroll</string>
-    <string name="menu_snakbar_fab_scale_anim">FAB scale anim</string>
-    <string name="menu_snakbar_fab_translate_anim">FAB translate anim</string>
+    <string name="menu_snakbar_fab_scale_anim">FAB Scale</string>
+    <string name="menu_snakbar_fab_translate_anim">FAB Translate</string>
+    <string name="menu_snakbar_fab_rotate_anim">FAB Rotate</string>
 
 
     <string name="menu_extended_toolbar_scroll">scroll+enteralways</string>

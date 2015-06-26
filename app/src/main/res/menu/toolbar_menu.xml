@@ -16,4 +16,9 @@
         android:id="@+id/menu_scroll_enteralways"
         android:title="@string/menu_toolbar_scroll_n_enteralways"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_scroll_rotate"
+        android:title="@string/menu_snakbar_fab_rotate_anim"
+        app:showAsAction="never" />
 </menu>

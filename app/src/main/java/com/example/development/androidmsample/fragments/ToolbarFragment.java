@@ -6,6 +6,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -26,6 +27,9 @@ public class ToolbarFragment extends BaseFragment {
 
     @InjectView(R.id.recyclerview)
     RecyclerView mRecyclerView;
+
+    @InjectView(R.id.appbar)
+    AppBarLayout mAppBarLayout;
 
     @InjectView(R.id.fab)
     FloatingActionButton mFab;
@@ -72,34 +76,48 @@ public class ToolbarFragment extends BaseFragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        mAppBarLayout.addOnOffsetChangedListener(null);
         AppBarLayout.LayoutParams toolbarParams =
                 (AppBarLayout.LayoutParams) mToolbar.getLayoutParams();
         CoordinatorLayout.LayoutParams fabParams = (CoordinatorLayout.LayoutParams)mFab.getLayoutParams();
 
         switch (item.getItemId()) {
             case R.id.menu_scroll:
-                Snackbar.make(this.getView(), "You Selected Toolbar Scroll", Snackbar.LENGTH_SHORT).show();
                 toolbarParams.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL);
                 getActivity().supportInvalidateOptionsMenu();
                 return true;
             case R.id.menu_scroll_enteralways:
-                Snackbar.make(this.getView(), "You Selected Toolbar EnterAlways", Snackbar.LENGTH_SHORT).show();
                 toolbarParams.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
                 getActivity().supportInvalidateOptionsMenu();
                 return true;
             case R.id.menu_snakbar_fab_scale_anim:
-                Snackbar.make(this.getView(), "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
                 fabParams.setBehavior(new ScrollAwareFABBehavior(Constants.SCALE));
                 mFab.setLayoutParams(fabParams);
                 return true;
             case R.id.menu_snakbar_fab_translate_anim:
-                Snackbar.make(this.getView(), "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
                 fabParams.setBehavior(new ScrollAwareFABBehavior(Constants.TRANSLATE));
                 mFab.setLayoutParams(fabParams);
+            case R.id.menu_scroll_rotate:
+                mFab.setLayoutParams(null);
+                mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+                    @Override
+                    public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
+//                        float deltaY = mFab.getHeight()*1.5f;
+//                        if(i <0)animFab(deltaY);
+//                        else animFab(-deltaY);
+                    }
+                });
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void animFab(final float deltaY){
+//        ViewCompat.animate(mFab)
+//                .translationYBy(deltaY)
+//                .withLayer()
+//                .start();
     }
 
     private void setupRecyclerView() {
