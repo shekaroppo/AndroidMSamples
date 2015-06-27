@@ -87,10 +87,14 @@ public class ToolbarFragment extends BaseFragment implements SampleAdapter.OnSta
 
         switch (item.getItemId()) {
             case R.id.menu_scroll:
+                fabParams.setBehavior(new ScrollAwareFABBehavior(Constants.NONE));
+                mFab.setLayoutParams(fabParams);
                 toolbarParams.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL);
                 getActivity().supportInvalidateOptionsMenu();
                 return true;
             case R.id.menu_scroll_enteralways:
+                fabParams.setBehavior(new ScrollAwareFABBehavior(Constants.NONE));
+                mFab.setLayoutParams(fabParams);
                 toolbarParams.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
                 getActivity().supportInvalidateOptionsMenu();
                 return true;
@@ -101,16 +105,16 @@ public class ToolbarFragment extends BaseFragment implements SampleAdapter.OnSta
             case R.id.menu_snakbar_fab_translate_anim:
                 fabParams.setBehavior(new ScrollAwareFABBehavior(Constants.TRANSLATE));
                 mFab.setLayoutParams(fabParams);
-            case R.id.menu_scroll_rotate:
-                mFab.setLayoutParams(null);
-                mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-                    @Override
-                    public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
-//                        float deltaY = mFab.getHeight()*1.5f;
-//                        if(i <0)animFab(deltaY);
-//                        else animFab(-deltaY);
-                    }
-                });
+//            case R.id.menu_scroll_rotate:
+//                mFab.setLayoutParams(null);
+//                mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+//                    @Override
+//                    public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
+////                        float deltaY = mFab.getHeight()*1.5f;
+////                        if(i <0)animFab(deltaY);
+////                        else animFab(-deltaY);
+//                    }
+//                });
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -35,7 +35,7 @@
             android:id="@+id/drawer_user_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="shekar.shine@gmail.com"
+            android:text="shekarrex@gmail.com"
             style="@style/ViewText" />
     </LinearLayout>
 </RelativeLayout>

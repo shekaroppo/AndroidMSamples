@@ -26,7 +26,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         style="@style/wrap"
@@ -34,6 +33,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_action_done"
         app:borderWidth="0dp"
+        app:fabSize="normal"
         app:layout_behavior="com.example.development.androidmsample.utils.ScrollAwareFABBehavior" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -44,6 +44,7 @@ public class SampleAdapter
     @Override
     public void onItemMove(int fromPosition, int toPosition) {
         Collections.swap(mValues, fromPosition, toPosition);
+        Collections.swap(mDrawables, fromPosition, toPosition);
         notifyItemMoved(fromPosition, toPosition);
     }
     public SampleAdapter(Context context,OnStartDragListener dragStartListener) {

@@ -75,7 +75,16 @@ public class TabLayoutFragment extends BaseFragment {
                 params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
                 getActivity().supportInvalidateOptionsMenu();
                 return true;
-
+//            case R.id.menu_snakbar_fab_scale_anim:
+//                Snackbar.make(mRootView, "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
+//                params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
+//                getActivity().supportInvalidateOptionsMenu();
+//                return true;
+//            case R.id.menu_snakbar_fab_translate_anim:
+//                Snackbar.make(mRootView, "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
+//                params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
+//                getActivity().supportInvalidateOptionsMenu();
+//                return true;
 ////            case R.id.menu_extended_toolbar_scroll:
 ////                Snackbar.make(mRootView, "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
 ////                params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL|AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
