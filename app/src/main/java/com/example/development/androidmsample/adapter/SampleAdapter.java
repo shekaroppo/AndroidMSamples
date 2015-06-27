@@ -1,8 +1,11 @@
 package com.example.development.androidmsample.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -10,19 +13,42 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.development.androidmsample.R;
+import com.example.development.androidmsample.utils.helper.ItemTouchHelperAdapter;
+import com.example.development.androidmsample.utils.helper.ItemTouchHelperViewHolder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class SampleAdapter
-        extends RecyclerView.Adapter<SampleAdapter.ViewHolder> {
+        extends RecyclerView.Adapter<SampleAdapter.ViewHolder> implements ItemTouchHelperAdapter {
 
-    private List<String> mValues;
+    private List<String> mValues= new ArrayList<>();
     private List<Integer> mDrawables = new ArrayList<>();
+    private final OnStartDragListener mDragStartListener;
 
 
-    public SampleAdapter(Context context, List<String> items) {
-        mValues = items;
+    public interface OnStartDragListener {
+
+        void onStartDrag(RecyclerView.ViewHolder viewHolder);
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+        mValues.remove(position);
+        mDrawables.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    @Override
+    public void onItemMove(int fromPosition, int toPosition) {
+        Collections.swap(mValues, fromPosition, toPosition);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+    public SampleAdapter(Context context,OnStartDragListener dragStartListener) {
+        mDragStartListener = dragStartListener;
+        mValues.addAll(Arrays.asList(context.getResources().getStringArray(R.array.superheros)));
         setDrawables();
     }
 
@@ -72,23 +98,45 @@ public class SampleAdapter
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mTextView.setText(mValues.get(position));
+        // Start a drag whenever the handle view it touched
+        holder.mHandleView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
+                    mDragStartListener.onStartDrag(holder);
+                }
+                return false;
+            }
+        });
         Glide.with(holder.mImageView.getContext())
                 .load(mDrawables.get(position))
                 .into(holder.mImageView);
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements
+            ItemTouchHelperViewHolder {
 
         public final View mView;
         public final ImageView mImageView;
+        public final ImageView mHandleView;
         public final TextView mTextView;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
             mImageView = (ImageView) view.findViewById(R.id.avatar);
+            mHandleView = (ImageView) view.findViewById(R.id.handleview);
             mTextView = (TextView) view.findViewById(R.id.name);
 
+        }
+        @Override
+        public void onItemSelected() {
+            itemView.setBackgroundColor(Color.LTGRAY);
+        }
+
+        @Override
+        public void onItemClear() {
+            itemView.setBackgroundColor(0);
         }
 
         @Override

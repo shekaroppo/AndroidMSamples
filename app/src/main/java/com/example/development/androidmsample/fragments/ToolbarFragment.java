@@ -9,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,12 +19,15 @@ import com.example.development.androidmsample.R;
 import com.example.development.androidmsample.adapter.SampleAdapter;
 import com.example.development.androidmsample.utils.Constants;
 import com.example.development.androidmsample.utils.ScrollAwareFABBehavior;
+import com.example.development.androidmsample.utils.helper.SimpleItemTouchHelperCallback;
 
 import java.util.Arrays;
 
 import butterknife.InjectView;
 
-public class ToolbarFragment extends BaseFragment {
+public class ToolbarFragment extends BaseFragment implements SampleAdapter.OnStartDragListener {
+
+    private ItemTouchHelper mItemTouchHelper;
 
     @InjectView(R.id.recyclerview)
     RecyclerView mRecyclerView;
@@ -121,9 +125,18 @@ public class ToolbarFragment extends BaseFragment {
     }
 
     private void setupRecyclerView() {
+        mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-        mRecyclerView.setAdapter(new SampleAdapter(getActivity(),
-                Arrays.asList(getResources().getStringArray(R.array.superheros))));
+        SampleAdapter adapter=new SampleAdapter(getActivity(),this);
+        mRecyclerView.setAdapter(adapter);
+        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(adapter);
+        mItemTouchHelper = new ItemTouchHelper(callback);
+        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
+    }
+
+    @Override
+    public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
+        mItemTouchHelper.startDrag(viewHolder);
     }
 
 }

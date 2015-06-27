@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +19,9 @@ import java.util.Arrays;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class SampleFragment extends Fragment {
+public class SampleFragment extends Fragment implements SampleAdapter.OnStartDragListener {
 
+    private ItemTouchHelper mItemTouchHelper;
     @InjectView(R.id.recyclerview)
     RecyclerView mRecyclerView;
     @Override
@@ -53,8 +55,12 @@ public class SampleFragment extends Fragment {
 
     private void setupRecyclerView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-        mRecyclerView.setAdapter(new SampleAdapter(getActivity(),
-                Arrays.asList(getResources().getStringArray(R.array.superheros))));
+        mRecyclerView.setAdapter(new SampleAdapter(getActivity()
+               ,this));
+    }
+    @Override
+    public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
+        mItemTouchHelper.startDrag(viewHolder);
     }
 
 }
