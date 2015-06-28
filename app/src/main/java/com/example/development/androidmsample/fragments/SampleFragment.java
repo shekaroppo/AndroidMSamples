@@ -28,7 +28,6 @@ public class SampleFragment extends Fragment implements SampleAdapter.OnStartDra
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sample_fragment, container, false);
         ButterKnife.inject(this, view);
-        Log.d("===SampleFragment", "onCreateView");
         return view;
 
     }
@@ -36,20 +35,17 @@ public class SampleFragment extends Fragment implements SampleAdapter.OnStartDra
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.d("===SampleFragment", "onViewCreated");
         Bundle args = this.getArguments();
         setupRecyclerView();
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        Log.d("===SampleFragment", "onSaveInstanceState");
     }
 
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
-        Log.d("===SampleFragment", "onViewStateRestored");
 
     }
 

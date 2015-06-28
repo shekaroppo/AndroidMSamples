@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    style="@style/match">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        style="@style/match"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        style="@style/block"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_marginTop="?attr/actionBarSize"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/row_one_item_one"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:background="#5182bb"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="30%" />
+
+        <View
+            android:id="@+id/row_one_item_two"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_toRightOf="@+id/row_one_item_one"
+            android:background="#396190"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="30%" />
+
+        <View
+            android:id="@+id/row_one_item_three"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_toRightOf="@+id/row_one_item_two"
+            android:background="#8fb5e1"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="40%" />
+
+        <View
+            android:id="@+id/row_two_item_one"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_one_item_one"
+            android:background="#d89695"
+            app:layout_heightPercent="15%" />
+
+        <View
+            android:id="@+id/row_three_item_one"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_two_item_one"
+            android:background="#f9c093"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="40%" />
+
+        <View
+            android:id="@+id/row_three_item_two"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_two_item_one"
+            android:layout_toRightOf="@+id/row_three_item_one"
+            android:background="#948957"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="60%" />
+
+        <View
+            android:id="@+id/row_four_item_one"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_three_item_one"
+            android:background="#ccc2d9"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="40%" />
+
+        <View
+            android:id="@+id/row_four_item_two"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_three_item_two"
+            android:layout_toRightOf="@+id/row_four_item_one"
+            android:background="#c3d59e"
+            app:layout_heightPercent="25%"
+            app:layout_widthPercent="60%" />
+
+        <View
+            android:id="@+id/row_five_item_one"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_four_item_one"
+            android:background="#948957"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="40%" />
+
+        <View
+            android:id="@+id/row_five_item_two"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_four_item_two"
+            android:layout_toRightOf="@+id/row_five_item_one"
+            android:background="#e6e0ec"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="60%" />
+
+        <View
+            android:id="@+id/row_six_item_one"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_five_item_one"
+            android:background="#f9c093"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="20%" />
+
+        <View
+            android:id="@+id/row_six_item_two"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_five_item_one"
+            android:layout_toRightOf="@+id/row_six_item_one"
+            android:background="#588fd3"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="20%" />
+
+        <View
+            android:id="@+id/row_six_item_three"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/row_five_item_two"
+            android:layout_toRightOf="@+id/row_six_item_two"
+            android:background="#a6a6a6"
+            app:layout_heightPercent="25%"
+            app:layout_widthPercent="60%" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

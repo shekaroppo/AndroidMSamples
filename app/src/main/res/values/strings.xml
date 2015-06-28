@@ -13,6 +13,7 @@
     <string name="collapsingToolbarLayout">CollapsingToolbarLayout </string>
     <string name="snaclbar">Snackbar</string>
     <string name="navigation_view">NavigationView</string>
+    <string name="percent_relative_layout">PercentRelativeLayout</string>
 
     <string-array name="batman_quotes">
         <item>Everyone has gone through some sort of struggle in their lives.</item>

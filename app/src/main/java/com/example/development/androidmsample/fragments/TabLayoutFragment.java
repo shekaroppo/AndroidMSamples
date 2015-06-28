@@ -64,13 +64,11 @@ public class TabLayoutFragment extends BaseFragment {
                     (AppBarLayout.LayoutParams) mTabLayout.getLayoutParams();
         switch (item.getItemId()) {
             case R.id.menu_tab_pin_scroll:
-                Snackbar.make(this.getView(), "You Selected TabLayout EnterAlways", Snackbar.LENGTH_SHORT).show();
                 tabParams.setScrollFlags(0);
                 params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
                 getActivity().supportInvalidateOptionsMenu();
                 return true;
             case R.id.menu_tab_unpin_scroll:
-                Snackbar.make(this.getView(), "You Selected TabLayout Scroll", Snackbar.LENGTH_SHORT).show();
                 tabParams.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL| AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
                 params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
                 getActivity().supportInvalidateOptionsMenu();

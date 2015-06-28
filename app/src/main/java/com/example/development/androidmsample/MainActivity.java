@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.development.androidmsample.fragments.BaseFragment;
+import com.example.development.androidmsample.fragments.PercentRelativeLayoutFragment;
 import com.example.development.androidmsample.fragments.TabLayoutFragment;
 import com.example.development.androidmsample.fragments.ToolbarFragment;
 import com.example.development.androidmsample.utils.Navigator;
@@ -130,6 +131,9 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
                 break;
             case R.id.tabLayout:
                 setRootFragment(TabLayoutFragment.newInstance());
+                break;
+            case R.id.percentRelativeLayout:
+                setRootFragment(PercentRelativeLayoutFragment.newInstance());
                 break;
         }
         mCurrentMenuItem = id;

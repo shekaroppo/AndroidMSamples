@@ -3,11 +3,17 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/toolbarLayout"
+            android:checked="true"
             android:icon="@drawable/ic_layers_black_18dp"
             android:title="@string/toolbarLayout" />
         <item
             android:id="@+id/tabLayout"
             android:icon="@drawable/ic_layers_black_18dp"
             android:title="@string/tabLayout" />
+        <item
+            android:id="@+id/percentRelativeLayout"
+            android:icon="@drawable/ic_layers_black_18dp"
+            android:title="@string/percent_relative_layout" />
+
     </group>
 </menu>
