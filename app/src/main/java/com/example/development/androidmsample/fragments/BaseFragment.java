@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 import com.example.development.androidmsample.MainActivity;
 import com.example.development.androidmsample.R;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 
 /**
@@ -23,13 +23,13 @@ import butterknife.InjectView;
 public abstract class BaseFragment extends Fragment {
 
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     Toolbar mToolbar;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(getLayout(), container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         return view;
     }
 

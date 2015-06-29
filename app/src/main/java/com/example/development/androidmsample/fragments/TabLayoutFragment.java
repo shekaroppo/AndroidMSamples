@@ -3,7 +3,6 @@ package com.example.development.androidmsample.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
@@ -14,17 +13,17 @@ import android.view.View;
 import com.example.development.androidmsample.R;
 import com.example.development.androidmsample.adapter.ViewPagerAdapter;
 
-import butterknife.InjectView;
+import butterknife.Bind;
 
 /**
  * Created by Shekar on 6/26/15.
  */
 public class TabLayoutFragment extends BaseFragment {
 
-    @InjectView(R.id.tabs)
+    @Bind(R.id.tabs)
     TabLayout mTabLayout;
 
-    @InjectView(R.id.viewpager)
+    @Bind(R.id.viewpager)
     ViewPager mViewPager;
 
 

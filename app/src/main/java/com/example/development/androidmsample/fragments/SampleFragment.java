@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,20 +13,18 @@ import android.view.ViewGroup;
 import com.example.development.androidmsample.R;
 import com.example.development.androidmsample.adapter.SampleAdapter;
 
-import java.util.Arrays;
-
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class SampleFragment extends Fragment implements SampleAdapter.OnStartDragListener {
 
     private ItemTouchHelper mItemTouchHelper;
-    @InjectView(R.id.recyclerview)
+    @Bind(R.id.recyclerview)
     RecyclerView mRecyclerView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sample_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         return view;
 
     }

@@ -6,7 +6,6 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -21,21 +20,19 @@ import com.example.development.androidmsample.utils.Constants;
 import com.example.development.androidmsample.utils.ScrollAwareFABBehavior;
 import com.example.development.androidmsample.utils.helper.SimpleItemTouchHelperCallback;
 
-import java.util.Arrays;
-
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class ToolbarFragment extends BaseFragment implements SampleAdapter.OnStartDragListener {
 
     private ItemTouchHelper mItemTouchHelper;
 
-    @InjectView(R.id.recyclerview)
+    @Bind(R.id.recyclerview)
     RecyclerView mRecyclerView;
 
-    @InjectView(R.id.appbar)
+    @Bind(R.id.appbar)
     AppBarLayout mAppBarLayout;
 
-    @InjectView(R.id.fab)
+    @Bind(R.id.fab)
     FloatingActionButton mFab;
 
     public static ToolbarFragment newInstance() {

@@ -2,7 +2,6 @@ package com.example.development.androidmsample;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,16 +16,16 @@ import com.example.development.androidmsample.fragments.TabLayoutFragment;
 import com.example.development.androidmsample.fragments.ToolbarFragment;
 import com.example.development.androidmsample.utils.Navigator;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class MainActivity extends AppCompatActivity implements DrawerLayout.DrawerListener
         , NavigationView.OnNavigationItemSelectedListener {
 
-    @InjectView(R.id.drawer_layout)
+    @Bind(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
 
-    @InjectView(R.id.navigation_view)
+    @Bind(R.id.navigation_view)
     NavigationView mNavigationView;
 
 
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         super.onCreate(savedInstanceState);
         Log.d("===", "onCreate");
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         initNavigator();
         setupNavDrawer();
         if(savedInstanceState==null){
