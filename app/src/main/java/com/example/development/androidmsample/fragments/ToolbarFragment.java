@@ -77,12 +77,17 @@ public class ToolbarFragment extends BaseFragment implements SampleAdapter.OnSta
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        mAppBarLayout.addOnOffsetChangedListener(null);
+        //mAppBarLayout.addOnOffsetChangedListener(null);
         AppBarLayout.LayoutParams toolbarParams =
                 (AppBarLayout.LayoutParams) mToolbar.getLayoutParams();
         CoordinatorLayout.LayoutParams fabParams = (CoordinatorLayout.LayoutParams)mFab.getLayoutParams();
 
         switch (item.getItemId()) {
+            case R.id.menu_toolbar_pin:
+                fabParams.setBehavior(new ScrollAwareFABBehavior(Constants.NONE));
+                mFab.setLayoutParams(fabParams);
+                toolbarParams.setScrollFlags(0);
+                getActivity().supportInvalidateOptionsMenu();
             case R.id.menu_scroll:
                 fabParams.setBehavior(new ScrollAwareFABBehavior(Constants.NONE));
                 mFab.setLayoutParams(fabParams);

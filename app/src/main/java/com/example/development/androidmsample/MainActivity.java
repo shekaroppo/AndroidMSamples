@@ -5,7 +5,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("===", "onCreate");
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initNavigator();
@@ -49,20 +47,16 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     @Override
     protected void onResumeFragments() {
         super.onResumeFragments();
-        Log.d("===", "onResumeFragments");
     }
 
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        Log.d("===", "onPostResume");
-
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d("===", "onSaveInstanceState");
     }
 
     @Override

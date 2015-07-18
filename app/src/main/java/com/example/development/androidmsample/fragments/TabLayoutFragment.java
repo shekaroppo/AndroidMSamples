@@ -72,31 +72,6 @@ public class TabLayoutFragment extends BaseFragment {
                 params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
                 getActivity().supportInvalidateOptionsMenu();
                 return true;
-//            case R.id.menu_snakbar_fab_scale_anim:
-//                Snackbar.make(mRootView, "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
-//                params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
-//                getActivity().supportInvalidateOptionsMenu();
-//                return true;
-//            case R.id.menu_snakbar_fab_translate_anim:
-//                Snackbar.make(mRootView, "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
-//                params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
-//                getActivity().supportInvalidateOptionsMenu();
-//                return true;
-////            case R.id.menu_extended_toolbar_scroll:
-////                Snackbar.make(mRootView, "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
-////                params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL|AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
-////                getActivity().supportInvalidateOptionsMenu();
-////                return true;
-////            case R.id.menu_extended_toolbar_scroll_enteralways:
-////                Snackbar.make(mRootView, "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
-////                params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL|AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
-////                getActivity().supportInvalidateOptionsMenu();
-////                return true;
-////            case R.id.menu_extended_toolbar_scroll_enteralways_enteralwasyscollapsed:
-////                Snackbar.make(mRootView, "You Selected EnterAlways", Snackbar.LENGTH_SHORT).show();
-////                params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL|AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
-////                getActivity().supportInvalidateOptionsMenu();
-////                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -106,15 +81,18 @@ public class TabLayoutFragment extends BaseFragment {
         mTabLayout.addTab(mTabLayout.newTab().setText("Tab 1"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Tab 2"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Tab 3"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("Tab 1"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("Tab 2"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("Tab 3"));
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         setupViewPager();
-        mTabLayout.setOnTabSelectedListener(tabSelectedListener);
     }
 
     private void setupViewPager() {
         mViewPager.setAdapter(new ViewPagerAdapter
                 (getChildFragmentManager(), mTabLayout.getTabCount()));
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
+        mTabLayout.setOnTabSelectedListener(tabSelectedListener);
     }
 
     private TabLayout.OnTabSelectedListener tabSelectedListener = new TabLayout.OnTabSelectedListener() {

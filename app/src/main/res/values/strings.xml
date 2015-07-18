@@ -72,6 +72,7 @@
     cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
     the big cheese.</string>
     <string name="menu_toolbar_scroll_">Toolbar scroll</string>
+    <string name="menu_toolbar_pin">Toolbar Pin</string>
     <string name="menu_toolbar_scroll_n_enteralways">Toolbar scroll enteralways</string>
     <string name="menu_tab_pin_scroll">Pin Tab on scroll</string>
     <string name="menu_tab_unpin_scroll">UnPin Tab on scroll</string>

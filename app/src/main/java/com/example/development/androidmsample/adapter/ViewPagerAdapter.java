@@ -36,6 +36,21 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
                 args.putString("name","Tab3");
                 tab.setArguments(args);
                 return tab;
+            case 3:
+                tab = new SampleFragment();
+                args.putString("name","Tab1");
+                tab.setArguments(args);
+                return tab;
+            case 4:
+                tab = new SampleFragment();
+                args.putString("name","Tab2");
+                tab.setArguments(args);
+                return tab;
+            case 5:
+                tab = new SampleFragment();
+                args.putString("name","Tab3");
+                tab.setArguments(args);
+                return tab;
             default:
                 return null;
         }

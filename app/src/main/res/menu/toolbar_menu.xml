@@ -13,6 +13,10 @@
         android:title="@string/menu_toolbar_scroll_"
         app:showAsAction="never|collapseActionView" />
     <item
+        android:id="@+id/menu_toolbar_pin"
+        android:title="@string/menu_toolbar_pin"
+        app:showAsAction="never|collapseActionView" />
+    <item
         android:id="@+id/menu_scroll_enteralways"
         android:title="@string/menu_toolbar_scroll_n_enteralways"
         app:showAsAction="never" />
