@@ -17,7 +17,7 @@ import android.view.View;
 import com.example.development.androidmsample.R;
 import com.example.development.androidmsample.adapter.SampleAdapter;
 import com.example.development.androidmsample.utils.Constants;
-import com.example.development.androidmsample.utils.ScrollAwareFABBehavior;
+import com.example.development.androidmsample.utils.behaviors.ScrollAwareFABBehavior;
 import com.example.development.androidmsample.utils.helper.SimpleItemTouchHelperCallback;
 
 import butterknife.Bind;

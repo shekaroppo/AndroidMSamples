@@ -1,5 +1,5 @@
 
-package com.example.development.androidmsample.utils;
+package com.example.development.androidmsample.utils.behaviors;
 
 import android.content.Context;
 import android.os.Build;
@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
 import com.example.development.androidmsample.R;
+import com.example.development.androidmsample.utils.Constants;
 
 public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
@@ -111,7 +112,7 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
     private void animateOut(final FloatingActionButton button) {
         Log.d(LOGTAG,"animateOut");
         if (Build.VERSION.SDK_INT >= 14) {
-            if(mAnimType==Constants.SCALE) {
+            if(mAnimType== Constants.SCALE) {
                 ViewCompat.animate(button).scaleX(0.0F).scaleY(0.0F).alpha(0.0F).setInterpolator(INTERPOLATOR).withLayer()
                         .setListener(animListner).start();
             }else if(mAnimType==Constants.TRANSLATE){

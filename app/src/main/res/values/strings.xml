@@ -14,6 +14,7 @@
     <string name="snaclbar">Snackbar</string>
     <string name="navigation_view">NavigationView</string>
     <string name="percent_relative_layout">PercentRelativeLayout</string>
+    <string name="footer_quick_return">FooterQuickReturn</string>
 
     <string-array name="batman_quotes">
         <item>Everyone has gone through some sort of struggle in their lives.</item>

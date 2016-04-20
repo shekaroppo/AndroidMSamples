@@ -14,6 +14,10 @@
             android:id="@+id/percentRelativeLayout"
             android:icon="@drawable/ic_layers_black_18dp"
             android:title="@string/percent_relative_layout" />
+        <item
+            android:id="@+id/footerQuickReturn"
+            android:icon="@drawable/ic_layers_black_18dp"
+            android:title="@string/footer_quick_return" />
 
     </group>
 </menu>

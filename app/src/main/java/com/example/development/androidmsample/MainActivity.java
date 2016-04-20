@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.development.androidmsample.fragments.BaseFragment;
+import com.example.development.androidmsample.fragments.FooterBarFragment;
 import com.example.development.androidmsample.fragments.PercentRelativeLayoutFragment;
 import com.example.development.androidmsample.fragments.TabLayoutFragment;
 import com.example.development.androidmsample.fragments.ToolbarFragment;
@@ -127,6 +128,9 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
                 break;
             case R.id.percentRelativeLayout:
                 setRootFragment(PercentRelativeLayoutFragment.newInstance());
+                break;
+            case R.id.footerQuickReturn:
+                setRootFragment(FooterBarFragment.newInstance());
                 break;
         }
         mCurrentMenuItem = id;
